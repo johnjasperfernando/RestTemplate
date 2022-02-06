@@ -1,8 +1,5 @@
 package com.restTemplateExample.RestTemplate.Service;
 
-public class FetchValuesService {
-
-}
 import com.restTemplateExample.RestTemplate.Controller.fetchValuesController;
 import com.restTemplateExample.RestTemplate.Dao.DataPersistence;
 import com.restTemplateExample.RestTemplate.Model.Post;
