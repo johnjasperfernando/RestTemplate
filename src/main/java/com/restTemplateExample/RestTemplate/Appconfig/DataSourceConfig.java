@@ -27,7 +27,6 @@ public class DataSourceConfig {
     @Bean(name="jdbcTemplate")
     public JdbcTemplate jdbcTemplate(@Qualifier("db")DataSource jdbcdataSource)
     {
-        return jdbcTemplate((DataSource) jdbcdataSource);
         return new JdbcTemplate(((DataSource) jdbcdataSource));
     }
 
