@@ -1,6 +1,11 @@
 package com.restTemplateExample.RestTemplate.Dao;
 
 import com.restTemplateExample.RestTemplate.Model.Post;
+import com.restTemplateExample.RestTemplate.Controller.fetchValuesController;
+import com.restTemplateExample.RestTemplate.Model.Post;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+>>>>>>> 546ff7a88519a2dbcb6d6e80d96f6b6200b10b65
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -22,6 +27,8 @@ public class DataPersistence {
     public DataPersistence(NamedParameterJdbcTemplate jdbcTemplate)
     {this.jdbcTemplate=jdbcTemplate;}
 
+    private static final Logger logger= LoggerFactory.getLogger(fetchValuesController.class);
+>>>>>>> 546ff7a88519a2dbcb6d6e80d96f6b6200b10b65
 
     public boolean insertPeople(List<Post> list) throws Exception {
 
@@ -43,6 +50,8 @@ public class DataPersistence {
 
             }
 
+                logger.info("insert the userId :"+li.getUserId());
+            }
         }
         catch (Exception  e)
         {

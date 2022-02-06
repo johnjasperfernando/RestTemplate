@@ -8,10 +8,18 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
+import com.restTemplateExample.RestTemplate.Service.FetchValuesService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.*;
+>>>>>>> 546ff7a88519a2dbcb6d6e80d96f6b6200b10b65
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
+import java.io.Serializable;
+>>>>>>> 546ff7a88519a2dbcb6d6e80d96f6b6200b10b65
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -28,6 +36,13 @@ public class fetchValuesController {
         this.restTemplate=restTemplate;
     }
 
+public class fetchValuesController implements Serializable {
+
+
+    SerivceResponse serivceResponse =new SerivceResponse();
+
+    private static final Logger logger= LoggerFactory.getLogger(fetchValuesController.class);
+>>>>>>> 546ff7a88519a2dbcb6d6e80d96f6b6200b10b65
     @RequestMapping(value = "/")
     public String  helloWorld()
     {
@@ -59,5 +74,22 @@ public class fetchValuesController {
             System.out.println(e.toString());
         }
         return  new Post[0];
+    @Autowired
+    FetchValuesService fetchValuesService;
+    @RequestMapping(value = "/posts")
+    public ResponseEntity getProductList() throws Exception {
+        try{
+        boolean query=false;
+        query=fetchValuesService.getproductlist();
+        serivceResponse.setResponseMessage("Success");
+        serivceResponse.setResposeCode(4001);
+        serivceResponse.setResponse("Data has been inserted successfully");
+        if(!query) return new ResponseEntity(serivceResponse,HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+        catch (Exception e)
+        {
+           logger.info(e.toString());
+        }
+        return  new ResponseEntity(serivceResponse,HttpStatus.OK) ;
     }
 }
