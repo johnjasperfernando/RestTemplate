@@ -7,15 +7,22 @@ public class Post {
         private String title;
         private String body;
 
-    public Post() {
+    public Post() {}
 
-    }
-
-    public Post(int userId, int id, String title, String body) {
-        this.userId = userId;
+    public Post(int id, int userId, String title, String body) {
         this.id = id;
+        this.userId = userId;
         this.title = title;
         this.body = body;
+    }
+
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public int getUserId() {
@@ -24,14 +31,6 @@ public class Post {
 
     public void setUserId(int userId) {
         this.userId = userId;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getTitle() {
@@ -49,4 +48,6 @@ public class Post {
     public void setBody(String body) {
         this.body = body;
     }
+
+
 }
