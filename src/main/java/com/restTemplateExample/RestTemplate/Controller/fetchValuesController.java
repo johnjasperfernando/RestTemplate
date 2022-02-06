@@ -1,25 +1,16 @@
 package com.restTemplateExample.RestTemplate.Controller;
 
 import com.restTemplateExample.RestTemplate.Dao.DataPersistence;
-import com.restTemplateExample.RestTemplate.Model.Post;
 import com.restTemplateExample.RestTemplate.Model.SerivceResponse;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.MediaType;
 import com.restTemplateExample.RestTemplate.Service.FetchValuesService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+
 
 @RestController
 public class fetchValuesController {

@@ -3,7 +3,6 @@ package com.restTemplateExample.RestTemplate.Service;
 import com.restTemplateExample.RestTemplate.Controller.fetchValuesController;
 import com.restTemplateExample.RestTemplate.Dao.DataPersistence;
 import com.restTemplateExample.RestTemplate.Model.Post;
-//import com.restTemplateExample.RestTemplate.Model.SerivceResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,11 +12,10 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.concurrent.ExecutionException;
+
 
 @Service
 public class FetchValuesService {
