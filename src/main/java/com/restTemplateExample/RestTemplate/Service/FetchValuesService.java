@@ -28,6 +28,8 @@ public class FetchValuesService {
     @Autowired
     DataPersistence dao;
 
+    List<Post> list;
+
     private static final Logger logger= LoggerFactory.getLogger(fetchValuesController.class);
 
     public boolean getproductlist() throws Exception {
@@ -53,6 +55,22 @@ public class FetchValuesService {
             throw new Exception(e);
         }
         return true;
+    }
+
+    public List<Post> getComment(int userId, boolean query) throws Exception {
+//        List<Post> list;
+        try {
+             list = dao.searchComment(userId);
+            for(Post e:list){
+                System.out.println(e);
+
+        }
+    }
+        catch (Exception e)
+        {
+            throw new Exception(e);
+        }
+        return list;
     }
 }
 

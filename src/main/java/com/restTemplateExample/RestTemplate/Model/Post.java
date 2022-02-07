@@ -1,6 +1,8 @@
 package com.restTemplateExample.RestTemplate.Model;
 
-public class Post {
+import java.io.Serializable;
+
+public class Post implements Serializable {
 
         private int userId;
         private int id;
